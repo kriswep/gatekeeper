@@ -17,11 +17,16 @@ GET http://localhost:9999/authenticate/TEMPORARY_CODE
 
 Also see the [documentation on Github](http://developer.github.com/v3/oauth/).
 
-1. Redirect users to request GitHub access.
+1. Redirect users to request GitHub access. Replace YOUR_GH_CLIENT_ID with your actual GitHub client_id.
 
    ```
-   GET https://github.com/login/oauth/authorize
+   GET https://github.com/login/oauth/authorize?client_id=YOUR_GH_CLIENT_ID
    ```
+   If you need specific [scopes](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/about-scopes-for-oauth-apps/) for your OAuth tokens you can add a scope query parameter.
+   ```
+   GET https://github.com/login/oauth/authorize?client_id=YOUR_GH_CLIENT_ID&scope=repo%20user
+   ```
+   You could also specify a redirect url by adding a redirect_uri query parameter. GitHub will redirect to that url after the user finishes authorization and it matches what is specified in GitHub OAuth configuration.
 
 2. GitHub redirects back to your site including a temporary code you need for the next step.
 
