@@ -2,12 +2,10 @@
   "name": "gatekeeper",
   "description": "Enables client-side applications to dance OAuth with Github.",
   "url": "http://github.com/prose/gatekeeper",
-  "keywords": [
-    "github",
-    "oauth"
-  ],
+  "keywords": ["github", "oauth"],
   "scripts": {
-      "start": "node server.js"
+    "prettier": "prettier --write \"./**/*.js\"",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +20,8 @@
     "node": "~6.11.1"
   },
   "main": "index",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "devDependencies": {
+    "prettier": "1.7.4"
+  }
 }
